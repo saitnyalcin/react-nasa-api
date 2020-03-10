@@ -21,7 +21,7 @@ const NasaApi = props => {
         <p>{data.explanation}</p>
         <p>Today's date: {data.date}</p>
       </header>
-      <img src={data.hdurl} className="" alt="logo" />
+      <img src={data.hdurl} className="image" alt="logo" />
     </div>
   );
 };

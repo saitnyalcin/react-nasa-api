@@ -41,3 +41,11 @@
 p {
   margin: 4%;
 }
+
+.image {
+  height: 80%;
+  width: 99%;
+  border-width: 5px;
+  border-style: dotted;
+  border-color: whitesmoke;
+}
