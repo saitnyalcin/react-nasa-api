@@ -1,16 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import logo from '../logo.svg';
+import AuthenticationAPI from '../services/NasaApiService';
 
 const NasaApi = props => {
   const [data, setData] = useState({ data: {} });
 
   useEffect(() => {
-    axios
-      .get(
-        'https://api.nasa.gov/planetary/apod?api_key=cbtDf4GVLpxTnWt48dkPcK0E8U3pcbDkTnYidFic'
-      )
-      .then(result => setData(result.data));
+    axios.get(AuthenticationAPI.API_URL()).then(result => setData(result.data));
   }, []);
 
   return (
