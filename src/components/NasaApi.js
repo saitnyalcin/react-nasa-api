@@ -1,15 +1,24 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import logo from '../logo.svg';
-import AuthenticationAPI from '../services/NasaApiService';
+import React, { useEffect, useState } from "react";
+import logo from "../logo.svg";
+import AuthenticationAPI from "../services/NasaApiService";
 
-const NasaApi = props => {
+const NasaApi = (props) => {
   // set the state of the data in this line
   const [data, setData] = useState({ data: {} });
 
-  // fetch the data from the api using axios data fetching library
   useEffect(() => {
-    axios.get(AuthenticationAPI.API_URL()).then(result => setData(result.data));
+    async function callNasaApi() {
+      await fetch(AuthenticationAPI.API_URL())
+        .then((response) => response.json())
+        .then((data) => setData(data))
+        .then((result) => {
+          console.log("Success:", result);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+    callNasaApi();
   }, []);
 
   return (
