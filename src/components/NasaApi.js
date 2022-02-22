@@ -27,7 +27,7 @@ const NasaApi = (props) => {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>{data.title}</h1>
         <p>{data.explanation}</p>
-        <p>Today's date: {data.date}</p>
+        <p>{data.date}</p>
       </header>
       <img src={data.hdurl} className="image" alt="logo" />
     </div>
