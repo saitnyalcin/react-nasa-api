@@ -3,7 +3,6 @@ import logo from "../logo.svg";
 import AuthenticationAPI from "../services/NasaApiService";
 
 const NasaApi = (props) => {
-  // set the state of the data in this line
   const [data, setData] = useState({ data: {} });
 
   useEffect(() => {
